@@ -9,7 +9,9 @@
       @for (link of navLinks; track link.href) {
         <a
           [href]="link.href"
-          class="flex items-center gap-2 text-text-muted hover:text-text-main transition-colors font-medium"
+          [class]="link.label === 'Sobre'
+            ? 'flex items-center gap-2 font-medium nav-link-active'
+            : 'flex items-center gap-2 text-text-muted hover:text-text-main transition-colors font-medium'"
         >
           @if (link.label === 'Sobre') {
             <app-icon name="person" class="w-4 h-4" />

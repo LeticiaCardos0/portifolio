@@ -1,0 +1,65 @@
+<section id="contato" class="col-span-1 md:col-span-2 lg:col-span-4 card-glass card-hover p-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Lado esquerdo: informações -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <app-icon name="mail" class="w-5 h-5 text-primary" />
+        <h2 class="text-xl font-semibold">Contato</h2>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <a [href]="'mailto:' + contact.email" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
+          <app-icon name="mail" class="w-4 h-4" />
+          {{ contact.email }}
+        </a>
+        <a [href]="contact.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
+          <app-icon name="linkedin" class="w-4 h-4" />
+          {{ contact.linkedinLabel }}
+        </a>
+        <a [href]="contact.github" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
+          <app-icon name="github" class="w-4 h-4" />
+          {{ contact.githubLabel }}
+        </a>
+      </div>
+    </div>
+
+    <!-- Lado direito: formulário -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Nome"
+          class="bg-white/5 border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
+        />
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="E-mail"
+          class="bg-white/5 border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
+        />
+      </div>
+
+      <textarea
+        formControlName="message"
+        placeholder="Mensagem"
+        rows="5"
+        class="bg-white/5 border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors resize-none"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="btn-gradient rounded-full px-6 py-3 flex items-center justify-center gap-2 font-medium text-white self-start"
+      >
+        Enviar Mensagem
+        <app-icon name="send" class="w-4 h-4" />
+      </button>
+
+      @if (submitted()) {
+        <p class="text-success text-sm font-medium">
+          Mensagem enviada com sucesso! Entrarei em contato em breve.
+        </p>
+      }
+    </form>
+  </div>
+</section>

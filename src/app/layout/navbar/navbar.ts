@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { IconComponent } from '../../icons/icons';
+import { IconComponent } from '../../components/icons/icons';
 import { NAV_LINKS, SITE_NAME } from '../../shared/portifolio-data';
 
 @Component({

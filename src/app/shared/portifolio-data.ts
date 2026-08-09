@@ -13,7 +13,7 @@ export const NAV_LINKS: NavLink[] = [
 export const HERO = {
   title: SITE_NAME,
   subtitle: SITE_ROLE,
-  photo: 'assets/images/foto.jpg',
+  photo: 'assets/foto-perfil.jpeg',
   description:
     'Apaixonado por tecnologia e soluções que fazem a diferença. Atuo com suporte técnico, QA e desenvolvimento de aplicações web modernas e escaláveis.',
 };

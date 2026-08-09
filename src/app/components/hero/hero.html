@@ -1,0 +1,38 @@
+<section
+  id="hero"
+  class="col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 card-glass card-hover p-8 md:p-10 overflow-hidden relative flex flex-col"
+>
+  <h1 class="text-5xl md:text-7xl font-extrabold text-gradient leading-none">
+    {{ hero.title }}
+  </h1>
+  <p class="mt-3 text-lg md:text-xl text-text-main font-medium">
+    {{ hero.subtitle }}
+  </p>
+
+  <div class="mt-8 flex flex-col items-start gap-6">
+    <div class="photo-ring">
+      <img
+        [src]="hero.photo"
+        alt="Foto de perfil"
+        class="w-28 h-28 object-cover"
+      />
+    </div>
+    <p class="text-text-muted leading-relaxed">
+      {{ hero.description }}
+    </p>
+  </div>
+
+  <div class="mt-auto pt-8 flex flex-wrap gap-3">
+    @for (social of socialLinks; track social.label) {
+      <a
+        [href]="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-outline rounded-full px-5 py-2.5 flex items-center gap-2 font-medium text-text-main"
+      >
+        <app-icon [name]="social.icon" class="w-4 h-4" />
+        {{ social.label }}
+      </a>
+    }
+  </div>
+</section>
