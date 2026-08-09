@@ -1,18 +1,18 @@
 <section id="tecnologias" class="col-span-1 md:col-span-2 lg:col-span-4 card-glass card-hover p-8">
   <div class="flex items-center gap-3 mb-8">
-    <app-icon name="code" class="w-5 h-5 text-primary" />
+    <svg data-p-icon="code" class="w-5 h-5 text-primary"></svg>
     <h2 class="text-xl font-semibold">Tecnologias</h2>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
     <div>
-      <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wide mb-4">Front-end</h3>
+      <h3 class="text-sm font-semibold text-gradient leading-none uppercase tracking-wide mb-4">Front-end</h3>
       <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
         @for (tech of frontend; track tech.name) {
           <div
             class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl btn-outline text-center tech-tile"
           >
-            <app-tech-icon [icon]="tech.icon" />
+            <img [src]="tech.iconPath" [alt]="tech.name" class="w-8 h-8 object-contain" />
             <span class="text-xs text-text-muted">{{ tech.name }}</span>
           </div>
         }
@@ -20,7 +20,7 @@
     </div>
 
     <div>
-      <h3 class="text-sm font-semibold text-accent uppercase tracking-wide mb-4">
+      <h3 class="text-sm font-semibold text-gradient leading-none uppercase tracking-wide mb-4">
         Back-end &amp; Ferramentas
       </h3>
       <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
@@ -34,7 +34,7 @@
                 aria-label="Em andamento"
               ></span>
             }
-            <app-tech-icon [icon]="tech.icon" />
+            <img [src]="tech.iconPath" [alt]="tech.name" class="w-8 h-8 object-contain" />
             <span class="text-xs text-text-muted">{{ tech.name }}</span>
           </div>
         }

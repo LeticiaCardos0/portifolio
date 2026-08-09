@@ -21,7 +21,8 @@ export interface Project {
 
 export interface TechItem {
   name: string;
-  icon: string;
+  /** Caminho da imagem do ícone dentro de public/, ex: 'assets/icons/angular.svg' */
+  iconPath: string;
   inProgress?: boolean;
 }
 

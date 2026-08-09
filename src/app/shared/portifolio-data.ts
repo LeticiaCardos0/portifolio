@@ -37,13 +37,13 @@ export const STATUS = {
 
 export const LOCATION = {
   title: 'Localização',
-  text: 'Brasil',
+  text: 'Brasil, SC',
 };
 
 export const EXPERIENCE = {
   title: 'Experiência',
   chip: 'Suporte Técnico + QA',
-  extra: 'Desenvolvimento Front-end',
+  chip2: 'Desenvolvimento Front-end',
 };
 
 export const PROJECTS: Project[] = [
@@ -69,21 +69,21 @@ export const PROJECTS: Project[] = [
 ];
 
 export const TECH_FRONTEND: TechItem[] = [
-  { name: 'Angular', icon: 'angular' },
-  { name: 'TypeScript', icon: 'typescript' },
-  { name: 'JavaScript', icon: 'javascript' },
-  { name: 'HTML', icon: 'html' },
-  { name: 'CSS', icon: 'css' },
-  { name: 'Tailwind', icon: 'tailwind' },
-  { name: 'PrimeNG', icon: 'primeng' },
+  { name: 'Angular', iconPath: 'assets/icons/angular.webp' },
+  { name: 'TypeScript', iconPath: 'assets/icons/ts.png' },
+  { name: 'JavaScript', iconPath: 'assets/icons/js.png' },
+  { name: 'HTML', iconPath: 'assets/icons/html.png' },
+  { name: 'CSS', iconPath: 'assets/icons/css.png' },
+  { name: 'Tailwind', iconPath: 'assets/icons/tailwind.webp' },
+  { name: 'PrimeNG', iconPath: 'assets/icons/primeng.webp' },
 ];
 
 export const TECH_BACKEND: TechItem[] = [
-  { name: 'Git', icon: 'git' },
-  { name: 'GitHub', icon: 'github' },
-  { name: 'MySQL', icon: 'mysql' },
-  { name: 'Java', icon: 'java', inProgress: true },
-  { name: 'Postman', icon: 'postman' },
+  { name: 'Git', iconPath: 'assets/icons/git.webp' },
+  { name: 'GitHub', iconPath: 'assets/icons/github.png' },
+  { name: 'Postgre', iconPath: 'assets/icons/postgre.png', inProgress: true  },
+  { name: 'Java', iconPath: 'assets/icons/java.png', inProgress: true },
+  { name: 'Postman', iconPath: 'assets/icons/postman.webp' },
 ];
 
 export const CONTACT: ContactInfo = {

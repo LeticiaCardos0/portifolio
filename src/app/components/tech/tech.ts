@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { IconComponent } from '../icons/icons';
-import { TechIconComponent } from '../tech-icon/tech-icon';
+import { Code } from '@primeicons/angular/code';
 import { TECH_BACKEND, TECH_FRONTEND } from '../../shared/portifolio-data';
 
 @Component({
   selector: 'app-tech',
   standalone: true,
-  imports: [IconComponent, TechIconComponent],
+  imports: [Code],
   templateUrl: './tech.html',
 })
 export class TechComponent {

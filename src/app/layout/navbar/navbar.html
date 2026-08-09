@@ -2,7 +2,7 @@
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
     <a href="#" class="text-2xl font-extrabold flex items-center gap-1">
       <span class="text-gradient">{{ siteName }}</span>
-      <span class="text-text-muted">&lt;&gt;</span>
+      <span class="text-text-muted"><img class="w-10 h-10" src="assets/logo-transparente.png" alt="logo"></span>
     </a>
 
     <div class="hidden md:flex items-center gap-8">
@@ -14,27 +14,46 @@
             : 'flex items-center gap-2 text-text-muted hover:text-text-main transition-colors font-medium'"
         >
           @if (link.label === 'Sobre') {
-            <app-icon name="person" class="w-4 h-4" />
+            <svg data-p-icon="user" class="w-4 h-4"></svg>
           } @else if (link.label === 'Projetos') {
-            <app-icon name="briefcase" class="w-4 h-4" />
+            <svg data-p-icon="briefcase" class="w-4 h-4"></svg>
           } @else if (link.label === 'Tecnologias') {
-            <app-icon name="code" class="w-4 h-4" />
+            <svg data-p-icon="code" class="w-4 h-4"></svg>
           } @else if (link.label === 'Contato') {
-            <app-icon name="mail" class="w-4 h-4" />
+            <svg data-p-icon="envelope" class="w-4 h-4"></svg>
           }
           {{ link.label }}
         </a>
       }
     </div>
 
-    <button
-      type="button"
-      class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg btn-outline"
-      (click)="toggleMenu()"
-      aria-label="Abrir menu"
-    >
-      <app-icon [name]="menuOpen() ? 'close' : 'menu'" class="w-5 h-5" />
-    </button>
+    <div class="flex items-center gap-3">
+      <button
+        type="button"
+        class="w-10 h-10 flex items-center justify-center rounded-lg btn-outline"
+        (click)="toggleTheme()"
+        [attr.aria-label]="theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'"
+      >
+        @if (theme() === 'dark') {
+          <svg data-p-icon="sun" class="w-5 h-5"></svg>
+        } @else {
+          <svg data-p-icon="moon" class="w-5 h-5"></svg>
+        }
+      </button>
+
+      <button
+        type="button"
+        class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg btn-outline"
+        (click)="toggleMenu()"
+        aria-label="Abrir menu"
+      >
+        @if (menuOpen()) {
+          <svg data-p-icon="times" class="w-5 h-5"></svg>
+        } @else {
+          <svg data-p-icon="bars" class="w-5 h-5"></svg>
+        }
+      </button>
+    </div>
   </div>
 
   @if (menuOpen()) {

@@ -29,9 +29,17 @@
             [href]="social.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-outline rounded-full px-5 py-2.5 flex items-center gap-2 font-medium text-text-main"
+            class="inline-flex items-center gap-2 mt-3 px-10 py-4 rounded-full btn-gradient-outline text-text-main"
+
           >
-            <app-icon [name]="social.icon" class="w-4 h-4" />
+            @switch (social.icon) {
+              @case ('github') {
+                <svg data-p-icon="github" class="w-4 h-4"></svg>
+              }
+              @case ('linkedin') {
+                <svg data-p-icon="linkedin" class="w-4 h-4"></svg>
+              }
+            }
             {{ social.label }}
           </a>
         }

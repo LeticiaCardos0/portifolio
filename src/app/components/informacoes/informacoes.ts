@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { IconComponent } from '../icons/icons';
 import { ABOUT, EXPERIENCE, LOCATION, STATUS } from '../../shared/portifolio-data';
 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [IconComponent],
+  imports: [],
   templateUrl: './informacoes.html',
 })
 export class InformacoesComponent {

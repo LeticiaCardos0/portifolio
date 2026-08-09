@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IconComponent } from '../icons/icons';
+import { Github } from '@primeicons/angular/github';
+import { Linkedin } from '@primeicons/angular/linkedin';
 import { HERO, SOCIAL_LINKS } from '../../shared/portifolio-data';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [IconComponent],
+  imports: [Github, Linkedin],
   templateUrl: './hero.html',
 })
 export class HeroComponent {

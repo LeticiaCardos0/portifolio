@@ -2,7 +2,7 @@
   <!-- Sobre Mim -->
   <div class="col-span-1 card-glass card-hover p-8">
     <div class="flex items-center gap-3 mb-4">
-      <app-icon name="person" class="w-5 h-5 text-primary" />
+      <i class="pi pi-user text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ about.title }}</h2>
     </div>
     <p class="text-text-muted leading-relaxed">{{ about.text }}</p>
@@ -11,7 +11,7 @@
   <!-- Status -->
   <div class="col-span-1 card-glass card-hover p-8 flex flex-col">
     <div class="flex items-center gap-3 mb-4">
-      <app-icon name="chart" class="w-5 h-5 text-primary" />
+      <i class="pi pi-chart-line text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ status.title }}</h2>
     </div>
     <p class="text-text-muted mb-4">{{ status.label }}</p>
@@ -29,7 +29,7 @@
     <span
       class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-success text-sm font-medium bg-success-bg"
     >
-      <app-icon name="check" class="w-4 h-4" />
+      <i class="pi pi-check-circle text-[16px]"></i>
       {{ status.badge }}
     </span>
   </div>
@@ -37,7 +37,7 @@
   <!-- Localização -->
   <div class="col-span-1 card-glass card-hover p-8 flex flex-col">
     <div class="flex items-center gap-3 mb-4">
-      <app-icon name="pin" class="w-5 h-5 text-primary" />
+      <i class="pi pi-map-marker text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ location.title }}</h2>
     </div>
     <div class="flex-1 flex items-center justify-center py-2 relative">
@@ -46,7 +46,7 @@
           <circle [attr.cx]="dotX(i)" [attr.cy]="dotY(i)" r="1.4" fill="currentColor" />
         }
       </svg>
-      <app-icon name="pin" class="w-5 h-5 text-accent absolute" />
+      <i class="pi pi-map-marker text-[20px] text-accent absolute"></i>
     </div>
     <p class="text-center text-text-main font-medium">{{ location.text }}</p>
   </div>
@@ -54,15 +54,22 @@
   <!-- Experiência -->
   <div class="col-span-1 card-glass card-hover p-8">
     <div class="flex items-center gap-3 mb-4">
-      <app-icon name="briefcase" class="w-5 h-5 text-primary" />
+      <i class="pi pi-briefcase text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ experience.title }}</h2>
     </div>
-    <span
-      class="inline-flex items-center gap-2 px-4 py-2 rounded-full btn-gradient text-white font-medium mb-3"
-    >
-      <app-icon name="headset" class="w-4 h-4" />
-      {{ experience.chip }}
-    </span>
-    <p class="text-text-muted text-sm">{{ experience.extra }}</p>
+    <div class="flex flex-col items-start gap-3 mb-3">
+      <span
+        class="inline-flex items-center gap-2 px-11.5 py-2.5 rounded-full btn-gradient-outline text-text-main"
+      >
+        <i class="pi pi-headphones text-[16px]"></i>
+        {{ experience.chip }}
+      </span>
+      <span
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gradient-outline text-text-main"
+      >
+        <i class="pi pi-headphones text-[16px]"></i>
+        {{ experience.chip2 }}
+      </span>
+    </div>
   </div>
 </section>
