@@ -9,30 +9,32 @@
     {{ hero.subtitle }}
   </p>
 
-  <div class="mt-8 flex flex-col items-start gap-6">
-    <div class="photo-ring">
-      <img
-        [src]="hero.photo"
-        alt="Foto de perfil"
-        class="w-28 h-28 object-cover"
-      />
+  <div class="mt-8 flex flex-row items-center gap-6">
+    <div class="border-r border-r-[#605E67] px-5 py-2.5 flex flex-col items-center gap-4 shrink-0">
+      <div class="photo-ring">
+        <img
+          [src]="hero.photo"
+          alt="Foto de perfil"
+          class="w-60 h-60 object-cover"
+        />
+      </div>
     </div>
-    <p class="text-text-muted leading-relaxed">
-      {{ hero.description }}
-    </p>
-  </div>
 
-  <div class="mt-auto pt-8 flex flex-wrap gap-3">
-    @for (social of socialLinks; track social.label) {
-      <a
-        [href]="social.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-outline rounded-full px-5 py-2.5 flex items-center gap-2 font-medium text-text-main"
-      >
-        <app-icon [name]="social.icon" class="w-4 h-4" />
-        {{ social.label }}
-      </a>
-    }
+    <div class="flex flex-wrap gap-3">
+        <p class="text-text-muted leading-relaxed pt-1">
+          {{ hero.description }}
+        </p>
+        @for (social of socialLinks; track social.label) {
+          <a
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline rounded-full px-5 py-2.5 flex items-center gap-2 font-medium text-text-main"
+          >
+            <app-icon [name]="social.icon" class="w-4 h-4" />
+            {{ social.label }}
+          </a>
+        }
+      </div>
   </div>
 </section>

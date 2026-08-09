@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
     title: 'FUTNERDS',
     description:
       'A comunidade definitiva para jogadores de FIFA. Análises, notícias, estratégias e muito mais para elevar seu jogo.',
-    image: 'assets/images/futnerds.png',
+    image: 'assets/projeto-futnerd.png',
     tags: ['Angular', 'TypeScript', 'Tailwind'],
     liveUrl: 'https://projeto-futnerds-ng.leticiaapc06.workers.dev/',
     codeUrl: 'https://github.com/LeticiaCardos0/projeto-futnerds-ng',
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     id: 'modular-locadora',
     title: 'MODULAR LOCADORA',
     description: 'Sistema de locadora de veículos com reservas, gestão de frota e clientes.',
-    image: 'assets/images/modular-locadora.png',
+    image: 'assets/projeto-locadora.png',
     tags: ['Angular', 'TypeScript', 'Tailwind'],
     liveUrl: 'https://projeto-locadora-ng.leticiaapc06.workers.dev/',
     codeUrl: 'https://github.com/LeticiaCardos0/projeto-locadora-ng',
