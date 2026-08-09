@@ -1,0 +1,51 @@
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-card-glass/80 border-b border-glass-border">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-2xl font-extrabold flex items-center gap-1">
+      <span class="text-gradient">{{ siteName }}</span>
+      <span class="text-text-muted">&lt;&gt;</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          class="flex items-center gap-2 text-text-muted hover:text-text-main transition-colors font-medium"
+        >
+          @if (link.label === 'Sobre') {
+            <app-icon name="person" class="w-4 h-4" />
+          } @else if (link.label === 'Projetos') {
+            <app-icon name="briefcase" class="w-4 h-4" />
+          } @else if (link.label === 'Tecnologias') {
+            <app-icon name="code" class="w-4 h-4" />
+          } @else if (link.label === 'Contato') {
+            <app-icon name="mail" class="w-4 h-4" />
+          }
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <button
+      type="button"
+      class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg btn-outline"
+      (click)="toggleMenu()"
+      aria-label="Abrir menu"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" class="w-5 h-5" />
+    </button>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="md:hidden flex flex-col gap-1 px-6 pb-4">
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          (click)="closeMenu()"
+          class="py-2 text-text-muted hover:text-text-main transition-colors font-medium"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </div>
+  }
+</nav>
