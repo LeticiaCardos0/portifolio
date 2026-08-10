@@ -1,23 +1,45 @@
 <section id="contato" class="col-span-1 md:col-span-2 lg:col-span-4 card-glass card-hover p-8">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
+    <!-- Divisor vertical (some no mobile) -->
+    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-glass-border -translate-x-1/2"></div>
+
     <!-- Lado esquerdo: informações -->
     <div>
       <div class="flex items-center gap-3 mb-6">
-        <svg data-p-icon="envelope" class="w-5 h-5 text-primary"></svg>
+        <i class="pi pi-envelope text-[20px] text-primary"></i>
         <h2 class="text-xl font-semibold">Contato</h2>
       </div>
 
       <div class="flex flex-col gap-4">
-        <a [href]="'mailto:' + contact.email" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
-          <svg data-p-icon="envelope" class="w-4 h-4"></svg>
+        <a
+          [href]="'mailto:' + contact.email"
+          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
+        >
+          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
+            <i class="pi pi-envelope text-[14px] text-primary"></i>
+          </span>
           {{ contact.email }}
         </a>
-        <a [href]="contact.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
-          <svg data-p-icon="linkedin" class="w-4 h-4"></svg>
+        <a
+          [href]="contact.linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
+        >
+          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
+            <i class="pi pi-linkedin text-[14px] text-primary"></i>
+          </span>
           {{ contact.linkedinLabel }}
         </a>
-        <a [href]="contact.github" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors">
-          <svg data-p-icon="github" class="w-4 h-4"></svg>
+        <a
+          [href]="contact.github"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
+        >
+          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
+            <i class="pi pi-github text-[14px] text-primary"></i>
+          </span>
           {{ contact.githubLabel }}
         </a>
       </div>
@@ -49,10 +71,10 @@
 
       <button
         type="submit"
-        class="btn-gradient rounded-full px-6 py-3 flex items-center justify-center gap-2 font-medium text-white self-start"
+        class="cursor-pointer btn-gradient rounded-full px-6 py-3 flex items-center justify-center gap-2 font-medium text-white self-start"
       >
+        <i class="pi pi-send text-[16px]"></i>
         Enviar Mensagem
-        <svg data-p-icon="send" class="w-4 h-4"></svg>
       </button>
 
       @if (submitted()) {

@@ -18,55 +18,46 @@
 
     <div class="flex items-center gap-3 mb-4">
       <div class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-        <div
-          class="h-full rounded-full btn-gradient progress-fill"
-          [style.--progress-width.%]="status.progress"
-        ></div>
+        <div class="h-full rounded-full btn-gradient progress-fill" [style.--progress-width.%]="status.progress"></div>
       </div>
       <span class="text-sm font-semibold text-text-main">{{ status.progress }}%</span>
     </div>
 
     <span
-      class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-success text-sm font-medium bg-success-bg"
-    >
+      class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-success text-sm font-medium bg-success-bg">
       <i class="pi pi-check-circle text-[16px]"></i>
       {{ status.badge }}
     </span>
   </div>
 
   <!-- Localização -->
-  <div class="col-span-1 card-glass card-hover p-8 flex flex-col">
+  <div class="col-span-1 card-glass card-hover p-8">
     <div class="flex items-center gap-3 mb-4">
       <i class="pi pi-map-marker text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ location.title }}</h2>
     </div>
-    <div class="flex-1 flex items-center justify-center py-2 relative">
-      <svg viewBox="0 0 90 60" class="w-28 h-20 text-primary/40">
-        @for (i of mapDots; track i) {
-          <circle [attr.cx]="dotX(i)" [attr.cy]="dotY(i)" r="1.4" fill="currentColor" />
-        }
-      </svg>
-      <i class="pi pi-map-marker text-[20px] text-accent absolute"></i>
+    <div class="flex justify-center py-2 relative">
+      <img
+        src="assets/mapa1.png"
+        alt="Mapa do Brasil"
+        class="w-36 h-28 object-contain"
+      />
     </div>
     <p class="text-center text-text-main font-medium">{{ location.text }}</p>
   </div>
 
   <!-- Experiência -->
   <div class="col-span-1 card-glass card-hover p-8">
-    <div class="flex items-center gap-3 mb-4">
+    <div class="flex items-center gap-3 mb-9">
       <i class="pi pi-briefcase text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ experience.title }}</h2>
     </div>
     <div class="flex flex-col items-start gap-3 mb-3">
-      <span
-        class="inline-flex items-center gap-2 px-11.5 py-2.5 rounded-full btn-gradient-outline text-text-main"
-      >
+      <span class="inline-flex items-center gap-2 px-11.5 py-2.5 rounded-full btn-gradient-outline text-text-main">
         <i class="pi pi-headphones text-[16px]"></i>
         {{ experience.chip }}
       </span>
-      <span
-        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gradient-outline text-text-main"
-      >
+      <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-gradient-outline text-text-main">
         <i class="pi pi-headphones text-[16px]"></i>
         {{ experience.chip2 }}
       </span>
