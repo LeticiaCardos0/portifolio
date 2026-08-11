@@ -1,6 +1,6 @@
-<section id="sobre" class="contents">
+<section class="contents">
   <!-- Sobre Mim -->
-  <div class="col-span-1 card-glass card-hover p-8">
+  <div id="sobre" class="col-span-1 card-glass card-hover p-8">
     <div class="flex items-center gap-3 mb-4">
       <i class="pi pi-user text-[20px] text-primary"></i>
       <h2 class="text-lg font-semibold">{{ about.title }}</h2>
@@ -17,7 +17,7 @@
     <p class="text-text-muted mb-4">{{ status.label }}</p>
 
     <div class="flex items-center gap-3 mb-4">
-      <div class="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
+      <div class="flex-1 h-2 rounded-full bg-glass-border overflow-hidden">
         <div class="h-full rounded-full btn-gradient progress-fill" [style.--progress-width.%]="status.progress"></div>
       </div>
       <span class="text-sm font-semibold text-text-main">{{ status.progress }}%</span>

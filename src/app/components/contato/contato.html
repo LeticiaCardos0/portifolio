@@ -1,79 +1,83 @@
 <section id="contato" class="col-span-1 md:col-span-2 lg:col-span-4 card-glass card-hover p-8">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
-    <!-- Divisor vertical (some no mobile) -->
-    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-glass-border -translate-x-1/2"></div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="flex flex-col gap-4">
+      <a
+        [href]="contact.linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-2xl p-5 flex items-center gap-4"
+      >
+        <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
+          <i class="pi pi-linkedin text-[22px] text-white"></i>
+        </span>
+        <span class="flex flex-col">
+          <span class="text-text-muted text-sm">Conecte-se no</span>
+          <span class="text-text-main font-bold">LinkedIn</span>
+        </span>
+      </a>
 
-    <!-- Lado esquerdo: informações -->
-    <div>
-      <div class="flex items-center gap-3 mb-6">
-        <i class="pi pi-envelope text-[20px] text-primary"></i>
-        <h2 class="text-xl font-semibold">Contato</h2>
-      </div>
+      <a
+        [href]="contact.github"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-2xl p-5 flex items-center gap-4"
+      >
+        <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
+          <i class="pi pi-github text-[22px] text-white"></i>
+        </span>
+        <span class="flex flex-col">
+          <span class="text-text-muted text-sm">Veja meus códigos</span>
+          <span class="text-text-main font-bold">GitHub</span>
+        </span>
+      </a>
 
-      <div class="flex flex-col gap-4">
-        <a
-          [href]="'mailto:' + contact.email"
-          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
-        >
-          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
-            <i class="pi pi-envelope text-[14px] text-primary"></i>
-          </span>
-          {{ contact.email }}
-        </a>
-        <a
-          [href]="contact.linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
-        >
-          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
-            <i class="pi pi-linkedin text-[14px] text-primary"></i>
-          </span>
-          {{ contact.linkedinLabel }}
-        </a>
-        <a
-          [href]="contact.github"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-3 text-text-muted hover:text-text-main transition-colors"
-        >
-          <span class="w-8 h-8 rounded-lg btn-outline flex items-center justify-center shrink-0">
-            <i class="pi pi-github text-[14px] text-primary"></i>
-          </span>
-          {{ contact.githubLabel }}
-        </a>
-      </div>
+      <a
+        [href]="'mailto:' + contact.email"
+        class="rounded-2xl p-5 flex items-center gap-4"
+      >
+        <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
+          <i class="pi pi-envelope text-[22px] text-white"></i>
+        </span>
+        <span class="flex flex-col">
+          <span class="text-text-muted text-sm">Envie um e-mail</span>
+          <span class="text-text-main font-bold">{{ contact.email }}</span>
+        </span>
+      </a>
     </div>
 
     <!-- Lado direito: formulário -->
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+      <div class="flex items-center gap-3 mb-2">
+        <i class="pi pi-send text-[20px] text-accent"></i>
+        <h2 class="text-xl font-semibold">Vamos conversar?</h2>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="text"
           formControlName="name"
-          placeholder="Nome"
+          placeholder="Seu Nome"
           class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
         />
         <input
           type="email"
           formControlName="email"
-          placeholder="E-mail"
+          placeholder="Seu E-mail"
           class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
         />
       </div>
 
       <textarea
         formControlName="message"
-        placeholder="Mensagem"
+        placeholder="Sua Mensagem"
         rows="5"
         class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors resize-none"
       ></textarea>
 
       <button
         type="submit"
-        class="cursor-pointer btn-gradient rounded-full px-6 py-3 flex items-center justify-center gap-2 font-medium text-white self-start"
+        class="cursor-pointer btn-gradient rounded-xl py-3.5 flex items-center justify-center font-semibold text-white w-full"
       >
-        <i class="pi pi-send text-[16px]"></i>
         Enviar Mensagem
       </button>
 

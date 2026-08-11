@@ -1,6 +1,9 @@
-<section id="projetos" class="contents">
-  @for (project of projects; track project.id) {
-    <article class="col-span-1 md:col-span-2 card-glass card-hover p-6 flex flex-col">
+<section class="contents">
+  @for (project of projects; track project.id; let isFirst = $first) {
+    <article
+      [attr.id]="isFirst ? 'projetos' : null"
+      class="col-span-1 md:col-span-2 card-glass card-hover p-6 flex flex-col"
+    >
       <div class="rounded-2xl overflow-hidden border border-glass-border mb-5 aspect-video bg-black/30">
         <img [src]="project.image" [alt]="project.title" class="w-full h-full object-cover" />
       </div>
