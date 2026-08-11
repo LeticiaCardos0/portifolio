@@ -1,7 +1,7 @@
 import { ContactInfo, NavLink, Project, SocialLink, TechItem } from './portfolio.models';
 
 export const SITE_NAME = 'Leticia Cardoso';
-export const SITE_ROLE = 'Analista de Suporte & QA | Desenvolvedor Fullstack';
+export const SITE_ROLE = 'Analista de Suporte & QA | Desenvolvimento Front-end';
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Sobre', href: '#sobre' },
@@ -15,7 +15,7 @@ export const HERO = {
   subtitle: SITE_ROLE,
   photo: 'assets/foto-perfil.jpeg',
   description:
-    'Apaixonado por tecnologia e soluções que fazem a diferença. Atuo com suporte técnico, QA e desenvolvimento de aplicações web modernas e escaláveis.',
+    'Profissional de tecnologia com experiência em Suporte, QA e desenvolvimento Front-end, unindo análise, resolução de problemas e criação de soluções Web.',
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -25,7 +25,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const ABOUT = {
   title: 'Sobre Mim',
-  text: 'Desenvolvedor Fullstack com foco em criar experiências digitais modernas, acessíveis e de alto desempenho. Gosto de transformar ideias em soluções práticas e eficientes.',
+  text: 'Desenvolvedora apaixonada por tecnologia, com foco em Front-end e interesse em Full Stack. Transformo desafios em soluções modernas e funcionais, sempre buscando evoluir.',
 };
 
 export const STATUS = {
