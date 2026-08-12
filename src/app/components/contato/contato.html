@@ -5,7 +5,7 @@
         [href]="contact.linkedin"
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-2xl p-5 flex items-center gap-4"
+        class="self-start rounded-2xl p-5 flex items-center gap-4"
       >
         <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
           <i class="pi pi-linkedin text-[22px] text-white"></i>
@@ -20,7 +20,7 @@
         [href]="contact.github"
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-2xl p-5 flex items-center gap-4"
+        class="self-start rounded-2xl p-5 flex items-center gap-4"
       >
         <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
           <i class="pi pi-github text-[22px] text-white"></i>
@@ -33,7 +33,7 @@
 
       <a
         [href]="'mailto:' + contact.email"
-        class="rounded-2xl p-5 flex items-center gap-4"
+        class="self-start rounded-2xl p-5 flex items-center gap-4"
       >
         <span class="w-14 h-14 rounded-full btn-gradient flex items-center justify-center shrink-0">
           <i class="pi pi-envelope text-[22px] text-white"></i>
@@ -46,33 +46,39 @@
     </div>
 
     <!-- Lado direito: formulário -->
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+    <form [formGroup]="form" (ngSubmit)="enviarWhatsapp()" class="flex flex-col gap-4">
       <div class="flex items-center gap-3 mb-2">
         <i class="pi pi-send text-[20px] text-accent"></i>
         <h2 class="text-xl font-semibold">Vamos conversar?</h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          type="text"
-          formControlName="name"
-          placeholder="Seu Nome"
-          class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
-        />
-        <input
-          type="email"
-          formControlName="email"
-          placeholder="Seu E-mail"
-          class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors"
-        />
+      <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+        <div>
+          <input
+            id="nome"
+            type="text"
+            formControlName="name"
+            placeholder="Seu Nome"
+            class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors w-full"
+          />
+          @if (form.controls.name.invalid && form.controls.name.touched) {
+            <p class="text-accent text-xs mt-1">Informe pelo menos 2 caracteres.</p>
+          }
+        </div>
       </div>
 
-      <textarea
-        formControlName="message"
-        placeholder="Sua Mensagem"
-        rows="5"
-        class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors resize-none"
-      ></textarea>
+      <div>
+        <textarea
+          id="mensagem"
+          formControlName="message"
+          placeholder="Sua Mensagem"
+          rows="5"
+          class="input-surface border border-glass-border rounded-xl px-4 py-3 text-text-main placeholder:text-text-muted outline-none focus:border-primary transition-colors resize-none w-full"
+        ></textarea>
+        @if (form.controls.message.invalid && form.controls.message.touched) {
+          <p class="text-accent text-xs mt-1">Escreva pelo menos 10 caracteres.</p>
+        }
+      </div>
 
       <button
         type="submit"
@@ -80,12 +86,6 @@
       >
         Enviar Mensagem
       </button>
-
-      @if (submitted()) {
-        <p class="text-success text-sm font-medium">
-          Mensagem enviada com sucesso! Entrarei em contato em breve.
-        </p>
-      }
     </form>
   </div>
 </section>

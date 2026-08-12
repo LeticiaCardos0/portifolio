@@ -87,11 +87,12 @@ export const TECH_BACKEND: TechItem[] = [
 ];
 
 export const CONTACT: ContactInfo = {
-  email: 'leticia06@gmail,com',
+  email: 'leticia06@gmail.com',
   linkedin: 'https://www.linkedin.com/in/leticia-aparecida-cardoso/',
   linkedinLabel: 'linkedin.com/in/leticia-aparecida-cardoso/',
   github: 'https://github.com/LeticiaCardos0',
   githubLabel: 'github.com/LeticiaCardos0',
+  whatsapp: '5547991212308',
 };
 
 export const FOOTER_TEXT = `© ${new Date().getFullYear()} ${SITE_NAME}. Todos os direitos reservados.`;

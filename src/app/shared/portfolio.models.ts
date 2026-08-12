@@ -32,4 +32,6 @@ export interface ContactInfo {
   linkedinLabel: string;
   github: string;
   githubLabel: string;
+  /** Número do WhatsApp com DDI+DDD, somente dígitos, ex: '5511999999999' */
+  whatsapp: string;
 }
