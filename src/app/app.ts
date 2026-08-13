@@ -10,7 +10,7 @@ import { TechComponent } from './components/tech/tech';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent, NavbarComponent,ProjetosComponent,ContatoComponent,HeroComponent,InformacoesComponent,TechComponent],
+  imports: [FooterComponent, NavbarComponent,ProjetosComponent,ContatoComponent,HeroComponent,InformacoesComponent,TechComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
