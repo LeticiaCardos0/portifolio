@@ -26,7 +26,7 @@ export class ContatoComponent {
 
     const { name, message } = this.form.getRawValue();
     const texto = `Olá, me chamo ${name} e ${message}`;
-    const url = `https://wa.me/${this.contact.whatsapp}?text=${encodeURIComponent(texto)}`;
+    const url = `https://wa.me/${this.contact.whatsapp}?text=${encodeURIComponent(texto)}`; 
 
     const janela = window.open(url, '_blank', 'noopener,noreferrer');
     if (!janela) {
